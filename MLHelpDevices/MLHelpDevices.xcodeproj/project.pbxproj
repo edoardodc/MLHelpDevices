@@ -15,6 +15,8 @@
 		111C78022351C78300BDC15F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 111C78002351C78300BDC15F /* LaunchScreen.storyboard */; };
 		111C780D2351C78300BDC15F /* MLHelpDevicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C780C2351C78300BDC15F /* MLHelpDevicesTests.swift */; };
 		111C78182351C78300BDC15F /* MLHelpDevicesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C78172351C78300BDC15F /* MLHelpDevicesUITests.swift */; };
+		111C78262351E99200BDC15F /* DeviceImagesClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 111C78252351E99200BDC15F /* DeviceImagesClassifier.mlmodel */; };
+		111C78282352728000BDC15F /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C78272352728000BDC15F /* BottomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		111C78132351C78300BDC15F /* MLHelpDevicesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MLHelpDevicesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		111C78172351C78300BDC15F /* MLHelpDevicesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLHelpDevicesUITests.swift; sourceTree = "<group>"; };
 		111C78192351C78300BDC15F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		111C78252351E99200BDC15F /* DeviceImagesClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DeviceImagesClassifier.mlmodel; path = ../../DeviceImagesClassifier.mlmodel; sourceTree = "<group>"; };
+		111C78272352728000BDC15F /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				111C77F52351C78000BDC15F /* AppDelegate.swift */,
 				111C77F72351C78000BDC15F /* SceneDelegate.swift */,
 				111C77F92351C78000BDC15F /* ViewController.swift */,
+				111C78272352728000BDC15F /* BottomView.swift */,
+				111C78252351E99200BDC15F /* DeviceImagesClassifier.mlmodel */,
 				111C77FB2351C78000BDC15F /* Main.storyboard */,
 				111C77FE2351C78300BDC15F /* Assets.xcassets */,
 				111C78002351C78300BDC15F /* LaunchScreen.storyboard */,
@@ -260,8 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				111C77FA2351C78000BDC15F /* ViewController.swift in Sources */,
+				111C78262351E99200BDC15F /* DeviceImagesClassifier.mlmodel in Sources */,
 				111C77F62351C78000BDC15F /* AppDelegate.swift in Sources */,
 				111C77F82351C78000BDC15F /* SceneDelegate.swift in Sources */,
+				111C78282352728000BDC15F /* BottomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +443,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WC2NUT8MA5;
 				INFOPLIST_FILE = MLHelpDevices/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WC2NUT8MA5;
 				INFOPLIST_FILE = MLHelpDevices/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
