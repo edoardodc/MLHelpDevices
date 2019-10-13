@@ -24,6 +24,8 @@
 		111C783223527B4200BDC15F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C783123527B4200BDC15F /* UIColorExtension.swift */; };
 		111C78342352835900BDC15F /* SearchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C78332352835900BDC15F /* SearchingView.swift */; };
 		111C783623528A6300BDC15F /* ButtonsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C783523528A6300BDC15F /* ButtonsDelegate.swift */; };
+		111C78382353765500BDC15F /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C78372353765500BDC15F /* Device.swift */; };
+		111C783A2353773E00BDC15F /* DetailDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C78392353773E00BDC15F /* DetailDeviceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		111C783123527B4200BDC15F /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		111C78332352835900BDC15F /* SearchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingView.swift; sourceTree = "<group>"; };
 		111C783523528A6300BDC15F /* ButtonsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsDelegate.swift; sourceTree = "<group>"; };
+		111C78372353765500BDC15F /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		111C78392353773E00BDC15F /* DetailDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDeviceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +129,9 @@
 				111C782F23527AE100BDC15F /* CustomButton.swift */,
 				111C783123527B4200BDC15F /* UIColorExtension.swift */,
 				111C78332352835900BDC15F /* SearchingView.swift */,
+				111C78392353773E00BDC15F /* DetailDeviceViewController.swift */,
 				111C783523528A6300BDC15F /* ButtonsDelegate.swift */,
+				111C78372353765500BDC15F /* Device.swift */,
 				111C78292352753600BDC15F /* ProximaNovaSoftW03-Regular.ttf */,
 				111C782B2352754B00BDC15F /* ProximaNovaSoftW03-Bold.ttf */,
 				111C78252351E99200BDC15F /* DeviceImagesClassifier.mlmodel */,
@@ -288,11 +294,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				111C78382353765500BDC15F /* Device.swift in Sources */,
 				111C77FA2351C78000BDC15F /* ViewController.swift in Sources */,
 				111C78262351E99200BDC15F /* DeviceImagesClassifier.mlmodel in Sources */,
 				111C77F62351C78000BDC15F /* AppDelegate.swift in Sources */,
 				111C783223527B4200BDC15F /* UIColorExtension.swift in Sources */,
 				111C783623528A6300BDC15F /* ButtonsDelegate.swift in Sources */,
+				111C783A2353773E00BDC15F /* DetailDeviceViewController.swift in Sources */,
 				111C77F82351C78000BDC15F /* SceneDelegate.swift in Sources */,
 				111C783023527AE100BDC15F /* CustomButton.swift in Sources */,
 				111C78342352835900BDC15F /* SearchingView.swift in Sources */,

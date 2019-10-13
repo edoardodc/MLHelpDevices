@@ -47,7 +47,7 @@ class BottomView: UIView {
         titleView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
 
         let buttonBuy = CustomButton(frame: .zero, backgroundColor: #colorLiteral(red: 0.00169262616, green: 0.5661305189, blue: 0.9979987741, alpha: 1))
-        buttonBuy.setTitle("Buy", for: .normal)
+        buttonBuy.setTitle("See more", for: .normal)
         buttonBuy.addTarget(self, action: #selector(buttonBuyTapped), for: .touchUpInside)
         let buttonClose = CustomButton(frame: .zero, backgroundColor: #colorLiteral(red: 0.9099481702, green: 0.9022024274, blue: 0.8895059228, alpha: 1))
         buttonClose.setTitleColor(#colorLiteral(red: 0.00169262616, green: 0.5661305189, blue: 0.9979987741, alpha: 1), for: .normal)
