@@ -6,16 +6,20 @@ import UIKit
 import AVKit
 import Vision
 
-class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
-
+class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate, ButtonsDelegate {
     
+
+    let buttonConfirm = CustomButton(frame: .zero, backgroundColor: #colorLiteral(red: 0.00169262616, green: 0.5661305189, blue: 0.9979987741, alpha: 1))
+    let searchingView = SearchingView()
+    let bottomView = BottomView()
+    var deviceName = ""
+    var selectedName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .black
         setupCameraCaptureSession()
-        showBottomView()
-    
+        addSearchingDeviceView()
     }
     
     func setupCameraCaptureSession() {
@@ -24,14 +28,11 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         guard let input = try? AVCaptureDeviceInput(device: captureDevice ) else { return }
         captureSession.addInput(input)
         captureSession.startRunning()
-        
         let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         view.layer.addSublayer(previewLayer)
         previewLayer.frame = view.frame
-        
         let dataOutput = AVCaptureVideoDataOutput()
         captureSession.addOutput(dataOutput)
-        
         dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
     }
 
@@ -45,18 +46,74 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             guard let firstObservation = results.first else { return }
             if firstObservation.confidence > 0.95 {
                 print(firstObservation.identifier, firstObservation.confidence)
+                DispatchQueue.main.async {
+                    self.searchingView.setText(text: String(firstObservation.identifier))
+                    self.deviceName = firstObservation.identifier
+                }
             }
         }
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
     }
     
-    func showBottomView() {
-        let bottomView = BottomView()
+    func showBottomView(text: String) {
+        bottomView.delegate = self
         view.addSubview(bottomView)
         bottomView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         bottomView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
     }
     
+    func addSearchingDeviceView() {
+        view.addSubview(searchingView)
+        searchingView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        searchingView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        
+        buttonConfirm.setTitle("Confirm", for: .normal)
+        buttonConfirm.addTarget(self, action: #selector(buttonConfirmTapped), for: .touchUpInside)
+        view.addSubview(buttonConfirm)
+        buttonConfirm.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        buttonConfirm.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        buttonConfirm.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        buttonConfirm.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+    }
+    
+    @objc func buttonConfirmTapped() {
+        buttonConfirm.alpha = 0
+        searchingView.alpha = 0
+        showBottomView(text: deviceName)
+        bottomView.setTitleText(title: deviceName)
+        selectedName = deviceName
+    }
+    
+    func didTapBuyButton() {
+        var urlString = ""
+        switch selectedName {
+        case "MacBook Pro":
+            urlString = "https://www.apple.com/macbook-pro/"
+            break
+        case "iPhone 7":
+            urlString = "https://www.apple.com/shop/buy-iphone/iphone-8"
+            break
+        case "Apple Watch":
+            urlString = "https://www.apple.com/shop/buy-watch/apple-watch"
+            break
+        case "iPhone 11":
+            urlString = "https://www.apple.com/shop/buy-iphone/iphone-11"
+            break
+        default:
+            break;
+        }
+        
+        if let url = URL(string: urlString) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    func didTapCloseButton() {
+        buttonConfirm.alpha = 1
+        searchingView.alpha = 1
+        bottomView.removeFromSuperview()
+        selectedName = deviceName
+    }
 
 }
 
