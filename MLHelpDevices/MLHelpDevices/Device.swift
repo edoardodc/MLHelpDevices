@@ -6,7 +6,7 @@ import Foundation
 import UIKit
 
 class Device {
-    
+
     var name: String?
     var price: Int?
     var company: String?
@@ -18,5 +18,4 @@ class Device {
         self.company = company
         self.image = image
     }
-    
 }

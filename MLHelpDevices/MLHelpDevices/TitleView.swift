@@ -1,4 +1,4 @@
-//  Created by Edoardo de Cal on 10/12/19.
+//  Created by Edoardo de Cal on 27/07/2019.
 //  Copyright © 2019 Edoardo de Cal. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ final class TitleView: UIView {
     let labelTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "ProximaNovaSoftW03-Bold", size: 27)
+        label.font = UIFont(name: "ProximaNovaSoftW03-Bold", size: 29)
         label.textColor = .black
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.2
@@ -38,13 +38,15 @@ final class TitleView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .fill
-        stackView.spacing = 2
+        stackView.spacing = 5
         return stackView
     }()
 
-    init() {
+    init(title: String) {
         super.init(frame: .zero)
         setupViews()
+        setupTextLabel(title: title)
+
     }
 
     func setupViews() {
@@ -53,7 +55,7 @@ final class TitleView: UIView {
         stackView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         stackView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: 28).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: 45).isActive = true
         nestedStackView.addArrangedSubview(labelTitle)
         stackView.addArrangedSubview(nestedStackView)
         stackView.addArrangedSubview(lineView)
@@ -61,7 +63,7 @@ final class TitleView: UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    public func setupTextLabel(title: String) {
+    func setupTextLabel(title: String) {
         labelTitle.text = title
     }
 

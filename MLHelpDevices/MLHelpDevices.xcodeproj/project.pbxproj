@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110A61BC235A3D90008F1609 /* DeviceImagesClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 110A61BB235A3D90008F1609 /* DeviceImagesClassifier.mlmodel */; };
 		111C77F62351C78000BDC15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C77F52351C78000BDC15F /* AppDelegate.swift */; };
 		111C77F82351C78000BDC15F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C77F72351C78000BDC15F /* SceneDelegate.swift */; };
 		111C77FA2351C78000BDC15F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C77F92351C78000BDC15F /* ViewController.swift */; };
@@ -15,7 +16,6 @@
 		111C78022351C78300BDC15F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 111C78002351C78300BDC15F /* LaunchScreen.storyboard */; };
 		111C780D2351C78300BDC15F /* MLHelpDevicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C780C2351C78300BDC15F /* MLHelpDevicesTests.swift */; };
 		111C78182351C78300BDC15F /* MLHelpDevicesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C78172351C78300BDC15F /* MLHelpDevicesUITests.swift */; };
-		111C78262351E99200BDC15F /* DeviceImagesClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 111C78252351E99200BDC15F /* DeviceImagesClassifier.mlmodel */; };
 		111C78282352728000BDC15F /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C78272352728000BDC15F /* BottomView.swift */; };
 		111C782A2352753600BDC15F /* ProximaNovaSoftW03-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 111C78292352753600BDC15F /* ProximaNovaSoftW03-Regular.ttf */; };
 		111C782C2352754C00BDC15F /* ProximaNovaSoftW03-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 111C782B2352754B00BDC15F /* ProximaNovaSoftW03-Bold.ttf */; };
@@ -46,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		110A61BB235A3D90008F1609 /* DeviceImagesClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DeviceImagesClassifier.mlmodel; path = ../../DeviceImagesClassifier.mlmodel; sourceTree = "<group>"; };
 		111C77F22351C78000BDC15F /* MLHelpDevices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLHelpDevices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		111C77F52351C78000BDC15F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		111C77F72351C78000BDC15F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		111C78132351C78300BDC15F /* MLHelpDevicesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MLHelpDevicesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		111C78172351C78300BDC15F /* MLHelpDevicesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLHelpDevicesUITests.swift; sourceTree = "<group>"; };
 		111C78192351C78300BDC15F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		111C78252351E99200BDC15F /* DeviceImagesClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DeviceImagesClassifier.mlmodel; path = ../../DeviceImagesClassifier.mlmodel; sourceTree = "<group>"; };
 		111C78272352728000BDC15F /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 		111C78292352753600BDC15F /* ProximaNovaSoftW03-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNovaSoftW03-Regular.ttf"; sourceTree = "<group>"; };
 		111C782B2352754B00BDC15F /* ProximaNovaSoftW03-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNovaSoftW03-Bold.ttf"; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 				111C78372353765500BDC15F /* Device.swift */,
 				111C78292352753600BDC15F /* ProximaNovaSoftW03-Regular.ttf */,
 				111C782B2352754B00BDC15F /* ProximaNovaSoftW03-Bold.ttf */,
-				111C78252351E99200BDC15F /* DeviceImagesClassifier.mlmodel */,
+				110A61BB235A3D90008F1609 /* DeviceImagesClassifier.mlmodel */,
 				111C77FB2351C78000BDC15F /* Main.storyboard */,
 				111C77FE2351C78300BDC15F /* Assets.xcassets */,
 				111C78002351C78300BDC15F /* LaunchScreen.storyboard */,
@@ -296,7 +296,6 @@
 			files = (
 				111C78382353765500BDC15F /* Device.swift in Sources */,
 				111C77FA2351C78000BDC15F /* ViewController.swift in Sources */,
-				111C78262351E99200BDC15F /* DeviceImagesClassifier.mlmodel in Sources */,
 				111C77F62351C78000BDC15F /* AppDelegate.swift in Sources */,
 				111C783223527B4200BDC15F /* UIColorExtension.swift in Sources */,
 				111C783623528A6300BDC15F /* ButtonsDelegate.swift in Sources */,
@@ -304,6 +303,7 @@
 				111C77F82351C78000BDC15F /* SceneDelegate.swift in Sources */,
 				111C783023527AE100BDC15F /* CustomButton.swift in Sources */,
 				111C78342352835900BDC15F /* SearchingView.swift in Sources */,
+				110A61BC235A3D90008F1609 /* DeviceImagesClassifier.mlmodel in Sources */,
 				111C78282352728000BDC15F /* BottomView.swift in Sources */,
 				111C782E235278AC00BDC15F /* TitleView.swift in Sources */,
 			);

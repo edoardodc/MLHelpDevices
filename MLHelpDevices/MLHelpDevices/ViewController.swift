@@ -9,7 +9,7 @@ import Vision
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate, ButtonsDelegate {
     
 
-    let buttonConfirm = CustomButton(frame: .zero, backgroundColor: #colorLiteral(red: 0.00169262616, green: 0.5661305189, blue: 0.9979987741, alpha: 1))
+//    let buttonConfirm = CustomButton(frame: .zero, backgroundColor: #colorLiteral(red: 0.00169262616, green: 0.5661305189, blue: 0.9979987741, alpha: 1))
     let searchingView = SearchingView()
     let bottomView = BottomView()
     var deviceName = ""
@@ -19,6 +19,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         super.viewDidLoad()
         view.backgroundColor = .black
         setupCameraCaptureSession()
+        showBottomView(text: "Esempio")
         addSearchingDeviceView()
     }
     
@@ -39,7 +40,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        guard let model = try? VNCoreMLModel(for: DeviceImagesClassifier().model) else { return }
+        guard let model = try? VNCoreMLModel(for: HandImagesClassifier().model) else { return }
         let request = VNCoreMLRequest(model: model) { (finishedReq, error) in
             guard let results = finishedReq.results as? [VNClassificationObservation] else { return }
             
@@ -66,50 +67,29 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         view.addSubview(searchingView)
         searchingView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         searchingView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-        
-        buttonConfirm.setTitle("Confirm", for: .normal)
-        buttonConfirm.addTarget(self, action: #selector(buttonConfirmTapped), for: .touchUpInside)
-        view.addSubview(buttonConfirm)
-        buttonConfirm.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        buttonConfirm.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        buttonConfirm.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        buttonConfirm.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+//        buttonConfirm.setTitle("Confirm", for: .normal)
+//        buttonConfirm.addTarget(self, action: #selector(buttonConfirmTapped), for: .touchUpInside)
+//        view.addSubview(buttonConfirm)
+//        buttonConfirm.widthAnchor.constraint(equalToConstant: 250).isActive = true
+//        buttonConfirm.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        buttonConfirm.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        buttonConfirm.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
     }
     
     @objc func buttonConfirmTapped() {
-        buttonConfirm.alpha = 0
+//        buttonConfirm.alpha = 0
         searchingView.alpha = 0
         showBottomView(text: deviceName)
-        bottomView.setTitleText(title: deviceName)
         selectedName = deviceName
     }
     
     func didTapBuyButton() {
-        var urlString = ""
-        switch selectedName {
-        case "MacBook Pro":
-            urlString = "https://www.apple.com/macbook-pro/"
-            break
-        case "iPhone 7":
-            urlString = "https://www.apple.com/shop/buy-iphone/iphone-8"
-            break
-        case "Apple Watch":
-            urlString = "https://www.apple.com/shop/buy-watch/apple-watch"
-            break
-        case "iPhone 11":
-            urlString = "https://www.apple.com/shop/buy-iphone/iphone-11"
-            break
-        default:
-            break;
-        }
-        
-        if let url = URL(string: urlString) {
-            UIApplication.shared.open(url)
-        }
+        let vc = DetailDeviceViewController()
+        self.present(vc, animated: true, completion: nil)
     }
     
     func didTapCloseButton() {
-        buttonConfirm.alpha = 1
+//        buttonConfirm.alpha = 1
         searchingView.alpha = 1
         bottomView.removeFromSuperview()
         selectedName = deviceName
